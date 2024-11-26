@@ -1,10 +1,10 @@
 package com.example.text.utils;
 
-public class Replace {
+public class PatternReplacement {
     private String regex;
     private String replacement;
 
-    public Replace(String regex, String replacement) {
+    public PatternReplacement(String regex, String replacement) {
         this.regex = regex;
         this.replacement = replacement;
     }

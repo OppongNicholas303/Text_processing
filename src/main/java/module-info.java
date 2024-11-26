@@ -10,7 +10,10 @@ module com.example.text {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires org.fxmisc.richtext;
 
     opens com.example.text to javafx.fxml;
     exports com.example.text;
+    exports com.example.text.controller;
+    opens com.example.text.controller to javafx.fxml;
 }
