@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.TextFlow;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TextProcessController {
 
@@ -26,8 +23,10 @@ public class TextProcessController {
     @FXML private TextField replaceField;
 
 
-    private List<String> matchHistory = new ArrayList<>();
-    private Deque<PatternReplacement> historyTrack = new ArrayDeque<>();
+//    private List<String> matchHistory = new ArrayList<>();
+    private final HashSet<String> matchHistory = new HashSet<>();
+
+//    private Deque<PatternReplacement> historyTrack = new ArrayDeque<>();
 
     UndoRedo undoRedo = new UndoRedo();
 
@@ -133,7 +132,7 @@ public class TextProcessController {
         // Update the ListView (UI update) if you're using ListView for history
         ObservableList<String> observableHistory = FXCollections.observableArrayList(matchHistory);
         historyListView.setItems(observableHistory);
-        
+
     }
 
 }
